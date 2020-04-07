@@ -1,0 +1,5 @@
+user.email=chadmcintirecloud@gmail.com
+user.name=ChadMcIntire
+core.autocrlf=input
+alias.hist=log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+commit.template=/home/chad/.gitmessage
