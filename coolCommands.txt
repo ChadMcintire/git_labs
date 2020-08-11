@@ -1,0 +1,19 @@
+#look all commits to line 4 and 5 for lines.txt
+git log -L4,5:lines.txt
+
+# make a zip of the branch you want 
+git archive master --format=zip --output=../my_archive_as_of_date.zip
+
+#tar example
+git archive master --format=tar --output=../my_archive_as_of_date.tar
+
+# -9 is the highest level of compression -0 is no compression
+git archive --format=zip mytag subdir -9 > ../myarchive.zip
+
+#bundle up the repo so you can use in a disconnected manner
+
+#create the bundle
+git bundle create ../myrepo.bundle master
+
+#make the master branch from the bundle
+git clone -b master ../myrepo.bundle myrepo

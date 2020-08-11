@@ -1,0 +1,10 @@
+#run something similar to the following commands to figure
+#set the rules in the .git/config
+git config filter.insertDivisionABC.smudge "sed 's/%div/ABC/'"
+git config filter.insertDivisionABC.clean "sed 's/ision:ABC/ision:%div/'"
+
+#add the files to the .gitattributes so it know which folder to interact with.
+echo "div*.html filter=insertDivisionABC" >> .gitattributes
+
+#check that the file is doing what you think
+git show :0:smudge_clean/div_test_footer.html
