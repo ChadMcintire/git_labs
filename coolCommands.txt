@@ -35,4 +35,14 @@ git gc --auto
 #--prune | --no-prune    whether or not to prune loose objects that are older
 than 2 weeks
 
+#add a note to a commit 
+git notes add -m "This is an example of a note" 2f2ea1e
 
+# show notes on the commit
+git notes show 2f2ea1e
+
+#make a namespace with --ref to add the note to
+git notes --ref=review add -m "Looks ok to me" f3b05f9
+
+#show all notes, you can trade out * for any namespace
+git log --show-notes=*
