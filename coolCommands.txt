@@ -17,3 +17,22 @@ git bundle create ../myrepo.bundle master
 
 #make the master branch from the bundle
 git clone -b master ../myrepo.bundle myrepo
+
+#add a -f to force it to happen
+#remove ignored files
+git clean -X -d
+
+#remove all ignore and -x -d
+git clean -x -d
+
+#garbage collection should be done regularly
+#--aggressive    tells gc to do a more thourough clean up and optimization
+git gc --aggressive
+
+#--auto if anything need to be cleaned it is, otherwise exit
+git gc --auto
+
+#--prune | --no-prune    whether or not to prune loose objects that are older
+than 2 weeks
+
+
