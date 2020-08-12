@@ -46,3 +46,14 @@ git notes --ref=review add -m "Looks ok to me" f3b05f9
 
 #show all notes, you can trade out * for any namespace
 git log --show-notes=*
+
+
+# remove a file from all commits, using --ignore-unmatch so you don't get
+# an error where the file doesn't exist
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch <relative path to file>' <branch name>
+
+# delete the branch file from the branch, the -f will get rid of the backup
+git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch tmp_pass.txt' fix_secure
+
+# follow a file even if was moved or renamed
+git log --follow --name-only temp/tmp_pass.txt
